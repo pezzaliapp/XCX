@@ -101,7 +101,7 @@ export default function App() {
   useEffect(() => {
     const loadCatalogo = async () => {
       try {
-        const res = await fetch("/catalogo-prodotti-cormach-v6.csv-aligned.json", { cache: "no-store" });
+        const res = await fetch(`catalogo-prodotti-cormach-v6.csv-aligned.json`, { cache: "no-store" });
         if (!res.ok) throw new Error("Impossibile caricare il catalogo.");
         setCatalogo(await res.json());
       } catch (err) {
