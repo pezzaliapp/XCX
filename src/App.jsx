@@ -293,17 +293,17 @@ export default function App() {
   const [lang, setLang] = useState("it");
   const t = TRANSLATIONS[lang];
   const [step, setStep] = useState(1);
-  const [, set] = useState(null);
-  const [Error, setError] = useState("");
+  const [catalogo, setCatalogo] = useState(null);
+  const [catalogoError, setCatalogoError] = useState("");
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const load = async () => {
+    const loadCatalogo = async () => {
       try {
-        const res = await fetch(`catalogo-prodotti-cormach-v6_csv-aligned.json`, { cache: "no-store" });
+        const res = await fetch(`catalogo-prodotti-cormach-v6.csv-aligned.json`, { cache: "no-store" });
         if (!res.ok) throw new Error(t.catalogError);
         setCatalogo(await res.json());
       } catch (err) { console.error(err); setCatalogoError(t.catalogError); }
