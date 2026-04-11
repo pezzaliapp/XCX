@@ -436,7 +436,78 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data?.error || "Errore Worker.");
-      setResult(JSON.parse(cleanJsonResponse(data.result)));
+
+      const parsed = JSON.parse(cleanJsonResponse(data.result));
+
+      // Inject complete alignment systems from catalog directly — do not trust model selection
+      const needsAssetto = preparedInput.servizi_richiesti?.includes("assetto_ruote") || preparedInput.richiede_assetto;
+      if (needsAssetto && catalogo) {
+        const isFurgone = preparedInput.tipologie_veicoli?.includes("truck") || preparedInput.tipologie_veicoli?.includes("heavy_duty");
+        const pfa = catalogo.ponti_forbice_assetto?.find(p => isFurgone ? p.model === "PFA 50" : p.model === "PFA 40")
+          || catalogo.ponti_forbice_assetto?.[0];
+
+        const ponteAssetto = pfa ? {
+          code: pfa.code,
+          model: pfa.model,
+          motivo: pfa.difference || ""
+        } : null;
+
+        const isBasso = preparedInput.classe_volume_stimata === "basso";
+        const isAlto = preparedInput.classe_volume_stimata === "alto";
+        const priorita = preparedInput.priorita_cliente;
+
+        const sistemi = catalogo.sistemi_assetto || [];
+        const wr328a = sistemi.find(s => s.model === "WR 328A");
+        const geo10 = sistemi.find(s => s.model === "GEO 10");
+        const geo20 = sistemi.find(s => s.model === "GEO 20");
+        const geo25 = sistemi.find(s => s.model === "GEO 25");
+
+        const makeItem = (s) => s ? { ...s, ponte_assetto: ponteAssetto } : null;
+
+        let sistemiAssetto = [];
+        if (isBasso || priorita === "risparmio") {
+          sistemiAssetto = [makeItem(wr328a), makeItem(geo10)].filter(Boolean);
+        } else if (isAlto || priorita === "immagine_officina") {
+          sistemiAssetto = [makeItem(geo20), makeItem(geo25)].filter(Boolean);
+        } else {
+          sistemiAssetto = [makeItem(geo10), makeItem(geo20), makeItem(geo25)].filter(Boolean);
+        }
+
+        parsed.sistemi_assetto = sistemiAssetto;
+      } else if (!needsAssetto) {
+        parsed.sistemi_assetto = [];
+      }
+
+      // Inject lifts from catalog directly for sollevamento
+      const needsLifting = preparedInput.servizi_richiesti?.includes("sollevamento");
+      if (needsLifting && catalogo) {
+        const isTruck = preparedInput.tipologie_veicoli?.includes("truck") || preparedInput.tipologie_veicoli?.includes("heavy_duty");
+        if (isTruck) {
+          const wl85 = catalogo.colonne_mobili?.find(c => c.model?.includes("WL 85"));
+          if (wl85) parsed.sollevatori = [wl85];
+        } else {
+          const ponti = catalogo.ponti_forbice_doppia || [];
+          const spazio = preparedInput.spazio_officina;
+          let selected = [];
+          if (spazio === "piccolo") {
+            const l3100 = ponti.find(p => p.model?.includes("L 3100"));
+            if (l3100) selected = [l3100];
+          } else if (spazio === "grande") {
+            const l3500 = ponti.find(p => p.model?.includes("L 3500"));
+            const l3300evo = ponti.find(p => p.model?.includes("L 3300 EVO"));
+            selected = [l3300evo, l3500].filter(Boolean);
+          } else {
+            const l3300 = ponti.find(p => p.model === "L 3300");
+            const l3300evo = ponti.find(p => p.model?.includes("L 3300 EVO"));
+            selected = [l3300evo || l3300].filter(Boolean);
+          }
+          if (selected.length) parsed.sollevatori = selected;
+        }
+      } else if (!needsLifting) {
+        parsed.sollevatori = [];
+      }
+
+      setResult(parsed);
       setStep(8);
     } catch (err) { console.error(err); setError(err.message || "Errore."); }
     finally { setLoading(false); }
