@@ -260,7 +260,7 @@ ${JSON.stringify(inputData, null, 2)}
     setLoading(true);
     setError("");
     setResult(null);
-    setRawJson("");
+  
 
     try {
       const preparedInput = {
