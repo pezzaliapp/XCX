@@ -356,13 +356,14 @@ SOLLEVATORI RULES (lifting equipment for vehicle underside work):
 
 SISTEMI_ASSETTO RULES (wheel alignment systems):
 - Populate "sistemi_assetto" ONLY if servizi_richiesti includes "assetto_ruote" OR richiede_assetto=true.
-- ALWAYS propose BOTH a ponte (from ponti_forbice_assetto) AND a sistema_assetto (from sistemi_assetto).
-- For ponte assetto: PFA 40 for auto/SUV standard, PFA 50 for furgoni or wider vehicles.
-- For sistema_assetto by budget/priority:
-  * risparmio or basso volume → WR 328A (CCD entry) or GEO 10 (CCD professional)
-  * medio volume or produttivita → GEO 10 (CCD) or GEO 20 (3D cameras)
-  * alto volume or immagine_officina or premium → GEO 20 (3D) as consigliato, GEO 25 (3D portable) as premium alternative
-- Return 1-3 items in sistemi_assetto array covering the recommended options.
+- MANDATORY: Always return AT LEAST 2 items in sistemi_assetto array when assetto is requested.
+- MANDATORY: Each item in sistemi_assetto MUST include "ponte_assetto" field populated with PFA data from ponti_forbice_assetto catalog section. NEVER leave ponte_assetto empty or null.
+- PFA selection rule: use PFA 40 (code 05100369) for auto/SUV standard; use PFA 50 (code 05100367) for furgoni or vehicles wider than 2000mm.
+- Sistema_assetto selection by priority/volume:
+  * risparmio OR basso volume → item 1: WR 328A (code 03100074) + PFA 40, item 2: GEO 10 (code 03100094) + PFA 40
+  * medio volume OR produttivita → item 1: GEO 10 (code 03100094) + PFA 40, item 2: GEO 20 (code 03100085) + PFA 40, item 3: GEO 25 (code 03100103) + PFA 40 as portable premium
+  * alto volume OR immagine_officina → item 1: GEO 20 (code 03100085) + PFA 40, item 2: GEO 25 (code 03100103) + PFA 40 marked as "5D coming soon — sistema portatile premium"
+- GEO 25 MUST always appear as the top premium option when volume is medio or alto.
 - If assetto NOT requested: return "sistemi_assetto": [].
 
 MANDATORY JSON FORMAT (respond with JSON only, no markdown):
