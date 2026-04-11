@@ -482,7 +482,7 @@ ${JSON.stringify(inputData, null, 2)}
       <div className="container">
         <header className="hero">
           <h1>Configuratore Cormach V6</h1>
-          <p>Codici e descrizioni allineati al CSV reale. Prezzi esclusi.</p>
+          <p>Tu non lo sai ancora… ma stai già usando Agent AI by pezzaliAPP. Gemma + Gemini. Preparati a stupirti.</p>
         </header>
 
         <div className="progress-wrap">
