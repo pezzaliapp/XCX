@@ -476,8 +476,8 @@ ${JSON.stringify(inputData, null, 2)}
     <div className="app-shell">
       <div className="container">
         <header className="hero">
-          <h1>Configuratore Cormach V6</h1>
-          <p>Codici e descrizioni allineati al CSV reale. Prezzi esclusi.</p>
+          <h1>OfficinaAI</h1>
+          <p>Stai per scoprire come l'AI configura un'officina in 2 minuti.</p>
         </header>
 
         <div className="progress-wrap">
