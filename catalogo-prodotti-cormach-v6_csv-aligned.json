@@ -301,7 +301,8 @@
         "runflat",
         "ribassati"
       ],
-      "difference": "Leverless fascia media"
+      "difference": "Leverless fascia media — leverless top di gamma, massima produttività",
+      "leverless_level": "top"
     },
     {
       "code": "00100210",
@@ -314,7 +315,8 @@
         "runflat",
         "ribassati"
       ],
-      "difference": "Come CM 1200BB ma con motoinverter"
+      "difference": "Come CM 1200BB ma con motoinverter — leverless top di gamma, massima produttività",
+      "leverless_level": "top"
     },
     {
       "code": "00100301",
@@ -393,7 +395,8 @@
         "leverless",
         "motoinverter"
       ],
-      "difference": "Versione leverless con MI"
+      "difference": "Versione leverless con MI — leverless fascia media professionale",
+      "leverless_level": "mid"
     },
     {
       "code": "00100417",
@@ -405,7 +408,8 @@
         "motoinverter",
         "GT"
       ],
-      "difference": "Come F535S MI leverless ma con GT"
+      "difference": "Come F535S MI leverless ma con GT — leverless fascia media professionale",
+      "leverless_level": "mid"
     },
     {
       "code": "00100419",
@@ -416,7 +420,8 @@
         "leverless",
         "doppia velocità"
       ],
-      "difference": "Versione leverless 2 velocità"
+      "difference": "Versione leverless 2 velocità — leverless fascia media professionale",
+      "leverless_level": "mid"
     },
     {
       "code": "00100420",
@@ -428,7 +433,8 @@
         "doppia velocità",
         "GT"
       ],
-      "difference": "Come F535S 2V leverless ma con GT"
+      "difference": "Come F535S 2V leverless ma con GT — leverless fascia media professionale",
+      "leverless_level": "mid"
     },
     {
       "code": "00100347",
@@ -439,7 +445,8 @@
         "leverless",
         "premium"
       ],
-      "difference": "Leverless premium"
+      "difference": "Leverless entry — piatto tradizionale senza leva, fascia base",
+      "leverless_level": "entry"
     },
     {
       "code": "00100348",
@@ -451,7 +458,8 @@
         "premium",
         "GT"
       ],
-      "difference": "Come LIGRO ma con GT"
+      "difference": "Leverless entry — piatto tradizionale senza leva, fascia base",
+      "leverless_level": "entry"
     }
   ],
   "smontagomme_truck": [
