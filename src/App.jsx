@@ -86,9 +86,7 @@ export default function App() {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
-  const [rawJson, setRawJson] = useState("");
   const [error, setError] = useState("");
-  const [showTechnical, setShowTechnical] = useState(false);
 
   useEffect(() => {
     const loadCatalogo = async () => {
@@ -121,9 +119,7 @@ export default function App() {
   const resetAll = () => {
     setForm(initialForm);
     setResult(null);
-    setRawJson("");
     setError("");
-    setShowTechnical(false);
     setStep(1);
   };
 
@@ -286,7 +282,6 @@ ${JSON.stringify(inputData, null, 2)}
       if (!response.ok) throw new Error(data?.error || "Errore nella chiamata al Worker.");
 
       const cleanedText = cleanJsonResponse(data.result);
-      setRawJson(cleanedText);
       setResult(JSON.parse(cleanedText));
       setStep(8);
     } catch (err) {
@@ -470,7 +465,7 @@ ${JSON.stringify(inputData, null, 2)}
         </Section>;
       case 8:
         return <Section title="8. Configurazione pronta">
-          {result ? <ResultView result={result} showTechnical={showTechnical} rawJson={rawJson} onToggleTechnical={()=>setShowTechnical(!showTechnical)} /> : <p>Nessun risultato disponibile.</p>}
+          {result ? <ResultView result={result} /> : <p>Nessun risultato disponibile.</p>}
         </Section>;
       default:
         return null;
@@ -481,8 +476,8 @@ ${JSON.stringify(inputData, null, 2)}
     <div className="app-shell">
       <div className="container">
         <header className="hero">
-          <h1>OfficinaAI</h1>
-          <p>Stai per scoprire come l'AI configura un'officina in 2 minuti.</p>
+          <h1>Configuratore Cormach V6</h1>
+          <p>Codici e descrizioni allineati al CSV reale. Prezzi esclusi.</p>
         </header>
 
         <div className="progress-wrap">
@@ -567,7 +562,7 @@ function OfferCard({ title, data, truck=false }) {
   );
 }
 
-function ResultView({ result, showTechnical, rawJson, onToggleTechnical }) {
+function ResultView({ result }) {
   const auto = result?.linea_auto || {};
   const truck = result?.linea_truck || {};
   return (
@@ -610,18 +605,6 @@ function ResultView({ result, showTechnical, rawJson, onToggleTechnical }) {
         <ul>{(result?.domande_successive || []).map((n, idx)=><li key={idx}>{n}</li>)}</ul>
       </div>
 
-      <div className="result-block">
-        <button className="secondary" onClick={onToggleTechnical}>
-          {showTechnical ? "Nascondi JSON tecnico" : "Mostra JSON tecnico"}
-        </button>
-      </div>
-
-      {showTechnical && (
-        <details className="result-block" open>
-          <summary>JSON tecnico</summary>
-          <pre>{rawJson}</pre>
-        </details>
-      )}
     </div>
   );
 }
