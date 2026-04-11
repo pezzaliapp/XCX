@@ -423,7 +423,7 @@ export default function App() {
     const levLevel = getLeverlessLevel(vol, prio);
 
     return `You are a senior Cormach technical-commercial consultant.
-IMPORTANT: Respond ENTIRELY in ${langName}.
+IMPORTANT: Respond ENTIRELY in ${langName}. ALL text fields in the JSON response (sintesi, details, difference, motivo, note_operative, domande_successive) MUST be written in ${langName}. Translate any catalog text that appears in these fields into ${langName}. Only codes and model names stay unchanged.
 
 HARD CONSTRAINTS:
 - No prices. Do not invent codes outside the catalog.
