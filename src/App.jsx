@@ -427,30 +427,76 @@ IMPORTANT: Respond ENTIRELY in ${langName}.
 
 HARD CONSTRAINTS:
 - No prices. Do not invent codes outside the catalog.
+- ALL codes, models, details must come EXACTLY from the catalog. Never invent or leave empty.
 - If input includes auto/SUV AND truck/heavy_duty: create TWO DISTINCT BRANCHES linea_auto and linea_truck.
 - Follow all auto_lock_pref, auto_monitor_pref, truck_smonto_fascia, truck_eq_level rules strictly.
 
 LEVERLESS HIERARCHY (use leverless_level field in catalog):
-- "entry" level (LIGRO, LIGRO GT): piatto tradizionale senza leva — use for basso volume or risparmio
+- "entry" level (LIGRO, LIGRO GT): piatto tradizionale senza leva — for basso volume or risparmio
 - "mid" level (F 535S MI LEVERLESS, F 535S GT MI LEVERLESS): fascia media professionale
-- "top" level (PUMA, CM 1200BB MI): massima produttività leverless — use for alto volume or immagine_officina
+- "top" level (PUMA, CM 1200BB MI): massima produttivita — for alto volume or immagine_officina
 - Current customer leverless level: ${levLevel}
-- Base offer: one level below current. Consigliata: current level. Premium: one level above.
+- Base offer: one level BELOW current. Consigliata: current level. Premium: one level ABOVE.
 - NEVER propose LIGRO as top. NEVER propose PUMA as base for low volume.
 
 SMONTAGOMME RULES:
-- If richiede_leverless=true: select leverless models only, using the hierarchy above.
+- If richiede_leverless=true: select leverless models only using the hierarchy above.
 - If richiede_leverless=false: select traditional models (F 535S series).
+
+ACCESSORI RULES:
+- For each smontagomme and equilibratrice, include 1-3 relevant accessories from accessori_auto or accessori_truck catalog sections.
+- Accessories must have real code and name from catalog. Never invent accessories.
+
+GABBIA GONFIAGGIO RULES (truck line only):
+- Always populate gabbia_gonfiaggio with full details: code, model, csv_description, details, motivo.
+- Use real products from the catalog accessori_truck section.
 
 MANDATORY JSON FORMAT (JSON only, no markdown):
 {
   "profilo_officina": {"sintesi":"string","classe_volume":"basso|medio|alto","misto_auto_truck":false},
-  "linea_auto": {"attiva":true,"base":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"accessori":[]},"consigliata":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"accessori":[]},"premium":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"accessori":[]}},
-  "linea_truck": {"attiva":false,"base":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"gabbia_gonfiaggio":{"necessaria":true,"code":"","model":"","details":[],"difference":"","motivo":""},"accessori":[]},"consigliata":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"gabbia_gonfiaggio":{"necessaria":true,"code":"","model":"","details":[],"difference":"","motivo":""},"accessori":[]},"premium":{"smontagomme":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"equilibratrice":{"code":"","model":"","csv_description":"","details":[],"difference":"","motivo":""},"gabbia_gonfiaggio":{"necessaria":true,"code":"","model":"","details":[],"difference":"","motivo":""},"accessori":[]}},
+  "linea_auto": {
+    "attiva": true,
+    "base": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    },
+    "consigliata": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    },
+    "premium": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    }
+  },
+  "linea_truck": {
+    "attiva": false,
+    "base": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria":true,"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    },
+    "consigliata": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria":true,"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    },
+    "premium": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria":true,"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": [{"code":"string","name":"string","details":["string"],"motivo":"string"}]
+    }
+  },
   "sollevatori": [],
   "sistemi_assetto": [],
-  "note_operative": [],
-  "domande_successive": []
+  "note_operative": ["string"],
+  "domande_successive": ["string"]
 }
 
 CATALOG: ${JSON.stringify(catalogData, null, 2)}
