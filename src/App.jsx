@@ -31,8 +31,11 @@ const TRANSLATIONS = {
     linea_auto: "Linea auto", linea_truck: "Linea truck", note_op: "Note operative", domande: "Domande successive",
     codice: "Codice", modello: "Modello", descr_csv: "Descrizione CSV", dettagli: "Dettagli", differenze: "Differenze", motivo: "Motivo",
     smontagomme: "Smontagomme", equilibratrice: "Equilibratrice", gabbia_gonfiaggio: "Gabbia gonfiaggio",
-    accessori: "Accessori", nome: "Nome", sollevatori: "Sollevatori consigliati",
-    base: "Base", consigliata: "Consigliata", premium: "Premium", seleziona: "Seleziona", da_valutare: "Da valutare", nessuna_pref: "Nessuna preferenza",
+    accessori: "Accessori", nome: "Nome",
+    sollevatori: "Sollevatori consigliati",
+    sistemi_assetto: "Sistemi assetto ruote consigliati",
+    base: "Base", consigliata: "Consigliata", premium: "Premium",
+    seleziona: "Seleziona", da_valutare: "Da valutare", nessuna_pref: "Nessuna preferenza",
     opt_gommista: "Gommista", opt_officina: "Officina meccanica", opt_centro: "Centro completo",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Truck", opt_misto: "Misto", opt_suv: "SUV", opt_heavy: "Heavy duty",
     opt_smontagomme: "Smontagomme", opt_equilibratura: "Equilibratura", opt_assetto: "Assetto ruote", opt_sollevamento: "Sollevamento", opt_gonfiaggio: "Gabbia / gonfiaggio",
@@ -44,7 +47,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Con acquisizione automatica dati", opt_top_rlc: "Top con RLC",
     opt_risparmio: "Risparmio", opt_produttivita: "Produttività", opt_ergonomia: "Ergonomia", opt_immagine: "Immagine officina",
     copied: "Testo copiato negli appunti.", copy_error: "Impossibile copiare automaticamente.", da_definire: "da definire",
-    portata: "Portata", altezza_min: "Altezza minima", alimentazione: "Alimentazione", note_sollevatore: "Note",
+    portata: "Portata", altezza_min: "Altezza minima", alimentazione: "Alimentazione", tipo: "Tipo",
   },
   en: {
     subtitle: "Discover how AI configures a workshop in 2 minutes.",
@@ -65,8 +68,11 @@ const TRANSLATIONS = {
     linea_auto: "Car line", linea_truck: "Truck line", note_op: "Operational notes", domande: "Follow-up questions",
     codice: "Code", modello: "Model", descr_csv: "CSV description", dettagli: "Details", differenze: "Differences", motivo: "Reason",
     smontagomme: "Tyre changer", equilibratrice: "Wheel balancer", gabbia_gonfiaggio: "Inflation cage",
-    accessori: "Accessories", nome: "Name", sollevatori: "Recommended lifts",
-    base: "Basic", consigliata: "Recommended", premium: "Premium", seleziona: "Select", da_valutare: "To evaluate", nessuna_pref: "No preference",
+    accessori: "Accessories", nome: "Name",
+    sollevatori: "Recommended lifts",
+    sistemi_assetto: "Recommended wheel alignment systems",
+    base: "Basic", consigliata: "Recommended", premium: "Premium",
+    seleziona: "Select", da_valutare: "To evaluate", nessuna_pref: "No preference",
     opt_gommista: "Tyre shop", opt_officina: "Mechanical workshop", opt_centro: "Full service centre",
     opt_auto: "Car", opt_auto_suv: "Car + SUV", opt_truck: "Truck", opt_misto: "Mixed", opt_suv: "SUV", opt_heavy: "Heavy duty",
     opt_smontagomme: "Tyre changer", opt_equilibratura: "Wheel balancing", opt_assetto: "Wheel alignment", opt_sollevamento: "Lifting", opt_gonfiaggio: "Cage / inflation",
@@ -78,7 +84,7 @@ const TRANSLATIONS = {
     opt_auto_data: "With automatic data acquisition", opt_top_rlc: "Top with RLC",
     opt_risparmio: "Savings", opt_produttivita: "Productivity", opt_ergonomia: "Ergonomics", opt_immagine: "Workshop image",
     copied: "Text copied to clipboard.", copy_error: "Unable to copy automatically.", da_definire: "to be defined",
-    portata: "Capacity", altezza_min: "Min height", alimentazione: "Power supply", note_sollevatore: "Notes",
+    portata: "Capacity", altezza_min: "Min height", alimentazione: "Power supply", tipo: "Type",
   },
   de: {
     subtitle: "Entdecken Sie, wie KI eine Werkstatt in 2 Minuten konfiguriert.",
@@ -99,8 +105,11 @@ const TRANSLATIONS = {
     linea_auto: "PKW-Linie", linea_truck: "LKW-Linie", note_op: "Betriebshinweise", domande: "Folgefragen",
     codice: "Code", modello: "Modell", descr_csv: "CSV-Beschreibung", dettagli: "Details", differenze: "Unterschiede", motivo: "Grund",
     smontagomme: "Reifenmontiergerät", equilibratrice: "Auswuchtmaschine", gabbia_gonfiaggio: "Aufpumpkäfig",
-    accessori: "Zubehör", nome: "Name", sollevatori: "Empfohlene Hebebühnen",
-    base: "Basis", consigliata: "Empfohlen", premium: "Premium", seleziona: "Auswählen", da_valutare: "Zu bewerten", nessuna_pref: "Keine Präferenz",
+    accessori: "Zubehör", nome: "Name",
+    sollevatori: "Empfohlene Hebebühnen",
+    sistemi_assetto: "Empfohlene Spureinstellsysteme",
+    base: "Basis", consigliata: "Empfohlen", premium: "Premium",
+    seleziona: "Auswählen", da_valutare: "Zu bewerten", nessuna_pref: "Keine Präferenz",
     opt_gommista: "Reifenwerkstatt", opt_officina: "Mechanische Werkstatt", opt_centro: "Vollservice-Center",
     opt_auto: "PKW", opt_auto_suv: "PKW + SUV", opt_truck: "LKW", opt_misto: "Gemischt", opt_suv: "SUV", opt_heavy: "Schwerlast",
     opt_smontagomme: "Reifenmontage", opt_equilibratura: "Auswuchten", opt_assetto: "Spureinstellung", opt_sollevamento: "Heben", opt_gonfiaggio: "Käfig / Aufpumpen",
@@ -112,7 +121,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Mit automatischer Datenerfassung", opt_top_rlc: "Top mit RLC",
     opt_risparmio: "Sparen", opt_produttivita: "Produktivität", opt_ergonomia: "Ergonomie", opt_immagine: "Werkstattimage",
     copied: "Text kopiert.", copy_error: "Automatisches Kopieren nicht möglich.", da_definire: "zu definieren",
-    portata: "Tragfähigkeit", altezza_min: "Mindesthöhe", alimentazione: "Stromversorgung", note_sollevatore: "Hinweise",
+    portata: "Tragfähigkeit", altezza_min: "Mindesthöhe", alimentazione: "Stromversorgung", tipo: "Typ",
   },
   sq: {
     subtitle: "Zbuloni si AI konfiguron një punishte në 2 minuta.",
@@ -133,8 +142,11 @@ const TRANSLATIONS = {
     linea_auto: "Linja auto", linea_truck: "Linja kamion", note_op: "Shënime operative", domande: "Pyetje vijuese",
     codice: "Kodi", modello: "Modeli", descr_csv: "Përshkrim CSV", dettagli: "Detaje", differenze: "Ndryshime", motivo: "Arsyeja",
     smontagomme: "Ndërrues gomash", equilibratrice: "Ekuilibrues", gabbia_gonfiaggio: "Kafaz fryrjeje",
-    accessori: "Aksesore", nome: "Emri", sollevatori: "Ngritës të rekomanduar",
-    base: "Bazë", consigliata: "E rekomanduar", premium: "Premium", seleziona: "Zgjidh", da_valutare: "Për t'u vlerësuar", nessuna_pref: "Asnjë preferencë",
+    accessori: "Aksesore", nome: "Emri",
+    sollevatori: "Ngritës të rekomanduar",
+    sistemi_assetto: "Sisteme rregullimi rrotash të rekomanduara",
+    base: "Bazë", consigliata: "E rekomanduar", premium: "Premium",
+    seleziona: "Zgjidh", da_valutare: "Për t'u vlerësuar", nessuna_pref: "Asnjë preferencë",
     opt_gommista: "Vulkanizim", opt_officina: "Punishte mekanike", opt_centro: "Qendër e plotë",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Kamion", opt_misto: "I përzier", opt_suv: "SUV", opt_heavy: "Ngarkesa të rënda",
     opt_smontagomme: "Ndërrues gomash", opt_equilibratura: "Ekuilibrimi", opt_assetto: "Rregullim rrotash", opt_sollevamento: "Ngritje", opt_gonfiaggio: "Kafaz / fryrje",
@@ -146,7 +158,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Me blerje automatike të të dhënave", opt_top_rlc: "Top me RLC",
     opt_risparmio: "Kursim", opt_produttivita: "Produktivitet", opt_ergonomia: "Ergonomi", opt_immagine: "Imazhi i punishtes",
     copied: "Teksti u kopjua.", copy_error: "Kopjimi automatik i pamundur.", da_definire: "për t'u përcaktuar",
-    portata: "Kapaciteti", altezza_min: "Lartësia min", alimentazione: "Furnizimi", note_sollevatore: "Shënime",
+    portata: "Kapaciteti", altezza_min: "Lartësia min", alimentazione: "Furnizimi", tipo: "Lloji",
   },
   ro: {
     subtitle: "Descoperiți cum AI configurează un atelier în 2 minute.",
@@ -167,8 +179,11 @@ const TRANSLATIONS = {
     linea_auto: "Linie auto", linea_truck: "Linie camion", note_op: "Note operative", domande: "Întrebări ulterioare",
     codice: "Cod", modello: "Model", descr_csv: "Descriere CSV", dettagli: "Detalii", differenze: "Diferențe", motivo: "Motiv",
     smontagomme: "Mașină montare anvelope", equilibratrice: "Echilibrator", gabbia_gonfiaggio: "Colivie umflare",
-    accessori: "Accesorii", nome: "Nume", sollevatori: "Ridicătoare recomandate",
-    base: "De bază", consigliata: "Recomandat", premium: "Premium", seleziona: "Selectează", da_valutare: "De evaluat", nessuna_pref: "Nicio preferință",
+    accessori: "Accesorii", nome: "Nume",
+    sollevatori: "Ridicătoare recomandate",
+    sistemi_assetto: "Sisteme de aliniere recomandate",
+    base: "De bază", consigliata: "Recomandat", premium: "Premium",
+    seleziona: "Selectează", da_valutare: "De evaluat", nessuna_pref: "Nicio preferință",
     opt_gommista: "Vulcanizare", opt_officina: "Atelier mecanic", opt_centro: "Centru complet",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Camion", opt_misto: "Mixt", opt_suv: "SUV", opt_heavy: "Transport greu",
     opt_smontagomme: "Montare anvelope", opt_equilibratura: "Echilibrare", opt_assetto: "Geometrie roți", opt_sollevamento: "Ridicare", opt_gonfiaggio: "Colivie / umflare",
@@ -180,7 +195,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Cu achiziție automată de date", opt_top_rlc: "Top cu RLC",
     opt_risparmio: "Economie", opt_produttivita: "Productivitate", opt_ergonomia: "Ergonomie", opt_immagine: "Imaginea atelierului",
     copied: "Text copiat.", copy_error: "Copiere automată imposibilă.", da_definire: "de definit",
-    portata: "Capacitate", altezza_min: "Înălțime min", alimentazione: "Alimentare", note_sollevatore: "Note",
+    portata: "Capacitate", altezza_min: "Înălțime min", alimentazione: "Alimentare", tipo: "Tip",
   },
   zh: {
     subtitle: "了解AI如何在2分钟内配置车间。",
@@ -201,8 +216,11 @@ const TRANSLATIONS = {
     linea_auto: "轿车系列", linea_truck: "卡车系列", note_op: "操作备注", domande: "后续问题",
     codice: "代码", modello: "型号", descr_csv: "CSV描述", dettagli: "详情", differenze: "差异", motivo: "原因",
     smontagomme: "换胎机", equilibratrice: "平衡机", gabbia_gonfiaggio: "充气笼",
-    accessori: "配件", nome: "名称", sollevatori: "推荐举升机",
-    base: "基础", consigliata: "推荐", premium: "高级", seleziona: "选择", da_valutare: "待评估", nessuna_pref: "无偏好",
+    accessori: "配件", nome: "名称",
+    sollevatori: "推荐举升机",
+    sistemi_assetto: "推荐四轮定位系统",
+    base: "基础", consigliata: "推荐", premium: "高级",
+    seleziona: "选择", da_valutare: "待评估", nessuna_pref: "无偏好",
     opt_gommista: "轮胎店", opt_officina: "机械车间", opt_centro: "综合服务中心",
     opt_auto: "轿车", opt_auto_suv: "轿车 + SUV", opt_truck: "卡车", opt_misto: "混合", opt_suv: "SUV", opt_heavy: "重型",
     opt_smontagomme: "换胎", opt_equilibratura: "平衡", opt_assetto: "四轮定位", opt_sollevamento: "举升", opt_gonfiaggio: "充气笼/充气",
@@ -214,7 +232,7 @@ const TRANSLATIONS = {
     opt_auto_data: "自动数据采集", opt_top_rlc: "顶级含RLC",
     opt_risparmio: "节省", opt_produttivita: "生产效率", opt_ergonomia: "人体工程学", opt_immagine: "车间形象",
     copied: "文本已复制。", copy_error: "无法自动复制。", da_definire: "待定",
-    portata: "承重", altezza_min: "最小高度", alimentazione: "电源", note_sollevatore: "备注",
+    portata: "承重", altezza_min: "最小高度", alimentazione: "电源", tipo: "类型",
   },
 };
 
@@ -257,6 +275,11 @@ function exportCommercialText(result, t) {
   if ((result?.sollevatori || []).length) {
     lines.push(`${t.sollevatori}:`);
     result.sollevatori.forEach(s => lines.push(`- ${s.model} (${s.code || "-"}): ${s.motivo || ""}`));
+    lines.push("");
+  }
+  if ((result?.sistemi_assetto || []).length) {
+    lines.push(`${t.sistemi_assetto}:`);
+    result.sistemi_assetto.forEach(s => lines.push(`- ${s.model} (${s.code || "-"}): ${s.motivo || ""}`));
     lines.push("");
   }
   if ((result?.domande_successive || []).length) {
@@ -313,22 +336,79 @@ export default function App() {
 
   const buildPrompt = (inputData, catalogData) => {
     const langName = LANGUAGES.find(l => l.code === lang)?.label || "Italiano";
-    const needsLifts = inputData.servizi_richiesti?.includes("sollevamento") || inputData.servizi_richiesti?.includes("assetto_ruote") || inputData.richiede_assetto;
+    const needsAlignment = inputData.servizi_richiesti?.includes("assetto_ruote") || inputData.richiede_assetto;
+    const needsLifting = inputData.servizi_richiesti?.includes("sollevamento");
+    const needsTruck = inputData.tipologie_veicoli?.includes("truck") || inputData.tipologie_veicoli?.includes("heavy_duty");
+
     return `You are a senior Cormach technical-commercial consultant.
 IMPORTANT: Respond ENTIRELY in ${langName}. All text fields must be in ${langName}.
 
 HARD CONSTRAINTS:
 - No prices. Do not invent codes outside the catalog.
-- If input includes auto/SUV and truck/heavy_duty: create TWO DISTINCT BRANCHES linea_auto and linea_truck.
+- If input includes auto/SUV AND truck/heavy_duty: create TWO DISTINCT BRANCHES linea_auto and linea_truck.
 - Follow all auto_lock_pref, auto_monitor_pref, truck_smonto_fascia, truck_eq_level rules strictly.
-- SOLLEVATORI: If servizi_richiesti includes "sollevamento" OR "assetto_ruote" OR richiede_assetto=true, you MUST populate the "sollevatori" array with 1-3 recommended lifts from the catalog sections: ponti_forbice_assetto, ponti_forbice_doppia, colonne_mobili. Choose based on vehicle types and workshop space. For assetto_ruote: prefer ponti_forbice_assetto (PFA 40 or PFA 50). For general lifting: prefer ponti_forbice_doppia (L 3100, L 3300, L 3300 EVO, L 3400, L 3500 EVO). For heavy vehicles/trucks: prefer colonne_mobili (WL 85 MOVE). If sollevamento is NOT requested, return "sollevatori": [].
+
+SOLLEVATORI RULES (lifting equipment for vehicle underside work):
+- Populate "sollevatori" ONLY if servizi_richiesti includes "sollevamento".
+- For auto/SUV: prefer ponti_forbice_doppia (L 3100 bassa alzata for tight spaces, L 3300 EVO or L 3300 as standard, L 3500 EVO for premium).
+- For truck/heavy_duty: prefer colonne_mobili (WL 85 MOVE).
+- If sollevamento NOT requested: return "sollevatori": [].
+
+SISTEMI_ASSETTO RULES (wheel alignment systems):
+- Populate "sistemi_assetto" ONLY if servizi_richiesti includes "assetto_ruote" OR richiede_assetto=true.
+- ALWAYS propose BOTH a ponte (from ponti_forbice_assetto) AND a sistema_assetto (from sistemi_assetto).
+- For ponte assetto: PFA 40 for auto/SUV standard, PFA 50 for furgoni or wider vehicles.
+- For sistema_assetto by budget/priority:
+  * risparmio or basso volume → WR 328A (CCD entry) or GEO 10 (CCD professional)
+  * medio volume or produttivita → GEO 10 (CCD) or GEO 20 (3D cameras)
+  * alto volume or immagine_officina or premium → GEO 20 (3D) as consigliato, GEO 25 (3D portable) as premium alternative
+- Return 1-3 items in sistemi_assetto array covering the recommended options.
+- If assetto NOT requested: return "sistemi_assetto": [].
 
 MANDATORY JSON FORMAT (respond with JSON only, no markdown):
 {
   "profilo_officina": {"sintesi": "string", "classe_volume": "basso|medio|alto", "misto_auto_truck": false},
-  "linea_auto": {"attiva": true, "base": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "consigliata": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "premium": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}},
-  "linea_truck": {"attiva": false, "base": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "consigliata": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "premium": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}},
+  "linea_auto": {
+    "attiva": true,
+    "base": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    },
+    "consigliata": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    },
+    "premium": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    }
+  },
+  "linea_truck": {
+    "attiva": false,
+    "base": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    },
+    "consigliata": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    },
+    "premium": {
+      "smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},
+      "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},
+      "accessori": []
+    }
+  },
   "sollevatori": [{"code":"string","model":"string","csv_description":"string","portata":"string","altezza_min":"string","alimentazione":"string","details":["string"],"motivo":"string"}],
+  "sistemi_assetto": [{"code":"string","model":"string","csv_description":"string","tipo":"string","alimentazione":"string","details":["string"],"difference":"string","motivo":"string","ponte_assetto":{"code":"string","model":"string","motivo":"string"}}],
   "note_operative": ["string"],
   "domande_successive": ["string"]
 }
@@ -342,8 +422,17 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
     if (validationError) { setError(validationError); return; }
     setLoading(true); setError(""); setResult(null);
     try {
-      const preparedInput = { ...form, volume_veicoli_giorno: Number(form.volume_veicoli_giorno || 0), volume_gomme_giorno: Number(form.volume_gomme_giorno || 0), classe_volume_stimata: classifyVolume(form.volume_veicoli_giorno, form.volume_gomme_giorno) };
-      const response = await fetch(WORKER_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prompt: buildPrompt(preparedInput, catalogo) }) });
+      const preparedInput = {
+        ...form,
+        volume_veicoli_giorno: Number(form.volume_veicoli_giorno || 0),
+        volume_gomme_giorno: Number(form.volume_gomme_giorno || 0),
+        classe_volume_stimata: classifyVolume(form.volume_veicoli_giorno, form.volume_gomme_giorno)
+      };
+      const response = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: buildPrompt(preparedInput, catalogo) })
+      });
       const data = await response.json();
       if (!response.ok) throw new Error(data?.error || "Errore Worker.");
       setResult(JSON.parse(cleanJsonResponse(data.result)));
@@ -357,7 +446,10 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
     try { await navigator.clipboard.writeText(exportCommercialText(result, t)); alert(t.copied); }
     catch { alert(t.copy_error); }
   };
-  const openWhatsApp = () => { if (!result) return; window.open(`https://wa.me/?text=${encodeURIComponent(exportCommercialText(result, t))}`, "_blank"); };
+  const openWhatsApp = () => {
+    if (!result) return;
+    window.open(`https://wa.me/?text=${encodeURIComponent(exportCommercialText(result, t))}`, "_blank");
+  };
 
   const renderStep = () => {
     switch (step) {
@@ -380,8 +472,14 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
         <Field label={t.s5_op}><select value={form.livello_operatore} onChange={e=>updateField("livello_operatore",e.target.value)}><option value="">{t.seleziona}</option><option value="base">{t.opt_base}</option><option value="medio">{t.opt_medio}</option><option value="esperto">{t.opt_esperto}</option></select></Field>
       </Section>;
       case 6: return <Section title={t.s6_title}>
-        {lineAutoActive && <><Field label={t.s6_monitor}><select value={form.auto_monitor_pref} onChange={e=>updateField("auto_monitor_pref",e.target.value)}><option value="">{t.nessuna_pref}</option><option value="senza_monitor">{t.opt_senza_monitor}</option><option value="con_monitor">{t.opt_con_monitor}</option><option value="touch">{t.opt_touch}</option></select></Field><Field label={t.s6_lock}><select value={form.auto_lock_pref} onChange={e=>updateField("auto_lock_pref",e.target.value)}><option value="">{t.nessuna_pref}</option><option value="galletto_standard">{t.opt_galletto}</option><option value="ghiera_rapida">{t.opt_ghiera}</option><option value="nls">{t.opt_nls}</option></select></Field></>}
-        {lineTruckActive && <><Field label={t.s6_fascia}><select value={form.truck_smonto_fascia} onChange={e=>updateField("truck_smonto_fascia",e.target.value)}><option value="">{t.da_valutare}</option><option value="entry_26">{t.opt_entry}</option><option value="mid_56">{t.opt_mid}</option><option value="professional">{t.opt_prof}</option></select></Field><Field label={t.s6_eq}><select value={form.truck_eq_level} onChange={e=>updateField("truck_eq_level",e.target.value)}><option value="">{t.da_valutare}</option><option value="basic">{t.opt_base}</option><option value="auto_data">{t.opt_auto_data}</option><option value="top_rlc">{t.opt_top_rlc}</option></select></Field></>}
+        {lineAutoActive && <>
+          <Field label={t.s6_monitor}><select value={form.auto_monitor_pref} onChange={e=>updateField("auto_monitor_pref",e.target.value)}><option value="">{t.nessuna_pref}</option><option value="senza_monitor">{t.opt_senza_monitor}</option><option value="con_monitor">{t.opt_con_monitor}</option><option value="touch">{t.opt_touch}</option></select></Field>
+          <Field label={t.s6_lock}><select value={form.auto_lock_pref} onChange={e=>updateField("auto_lock_pref",e.target.value)}><option value="">{t.nessuna_pref}</option><option value="galletto_standard">{t.opt_galletto}</option><option value="ghiera_rapida">{t.opt_ghiera}</option><option value="nls">{t.opt_nls}</option></select></Field>
+        </>}
+        {lineTruckActive && <>
+          <Field label={t.s6_fascia}><select value={form.truck_smonto_fascia} onChange={e=>updateField("truck_smonto_fascia",e.target.value)}><option value="">{t.da_valutare}</option><option value="entry_26">{t.opt_entry}</option><option value="mid_56">{t.opt_mid}</option><option value="professional">{t.opt_prof}</option></select></Field>
+          <Field label={t.s6_eq}><select value={form.truck_eq_level} onChange={e=>updateField("truck_eq_level",e.target.value)}><option value="">{t.da_valutare}</option><option value="basic">{t.opt_base}</option><option value="auto_data">{t.opt_auto_data}</option><option value="top_rlc">{t.opt_top_rlc}</option></select></Field>
+        </>}
       </Section>;
       case 7: return <Section title={t.s7_title}>
         <Field label={t.s7_priorita}><select value={form.priorita_cliente} onChange={e=>updateField("priorita_cliente",e.target.value)}><option value="">{t.seleziona}</option><option value="risparmio">{t.opt_risparmio}</option><option value="produttivita">{t.opt_produttivita}</option><option value="ergonomia">{t.opt_ergonomia}</option><option value="immagine_officina">{t.opt_immagine}</option></select></Field>
@@ -403,7 +501,8 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
           <p>{t.subtitle}</p>
           <div style={{display:"flex",gap:"8px",flexWrap:"wrap",marginTop:"12px"}}>
             {LANGUAGES.map(l => (
-              <button key={l.code} onClick={() => setLang(l.code)} title={l.label} style={{fontSize:"22px",background:"none",border:lang===l.code?"2px solid currentColor":"2px solid transparent",borderRadius:"6px",padding:"2px 6px",cursor:"pointer",opacity:lang===l.code?1:0.5}}>
+              <button key={l.code} onClick={() => setLang(l.code)} title={l.label}
+                style={{fontSize:"22px",background:"none",border:lang===l.code?"2px solid currentColor":"2px solid transparent",borderRadius:"6px",padding:"2px 6px",cursor:"pointer",opacity:lang===l.code?1:0.5}}>
                 {l.flag}
               </button>
             ))}
@@ -434,8 +533,12 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
 
 function Section({ title, children }) { return <section><h2 className="section-title">{title}</h2>{children}</section>; }
 function Field({ label, children }) { return <label className="field"><span className="label">{label}</span>{children}</label>; }
-function CheckboxGroup({ options, values, onToggle }) { return <div className="checkbox-group">{options.map(opt=><label key={opt.value} className="checkbox-item"><input type="checkbox" checked={values.includes(opt.value)} onChange={()=>onToggle(opt.value)} /><span>{opt.label}</span></label>)}</div>; }
-function ToggleRow({ label, checked, onChange }) { return <label className="toggle-row"><span>{label}</span><input type="checkbox" checked={checked} onChange={e=>onChange(e.target.checked)} /></label>; }
+function CheckboxGroup({ options, values, onToggle }) {
+  return <div className="checkbox-group">{options.map(opt=><label key={opt.value} className="checkbox-item"><input type="checkbox" checked={values.includes(opt.value)} onChange={()=>onToggle(opt.value)} /><span>{opt.label}</span></label>)}</div>;
+}
+function ToggleRow({ label, checked, onChange }) {
+  return <label className="toggle-row"><span>{label}</span><input type="checkbox" checked={checked} onChange={e=>onChange(e.target.checked)} /></label>;
+}
 
 function MachineBlock({ title, item, t }) {
   return (
@@ -466,6 +569,27 @@ function LiftBlock({ item, t }) {
   );
 }
 
+function AlignmentBlock({ item, t }) {
+  return (
+    <div className="machine-block">
+      <p><strong>{t.codice}:</strong> {item?.code || t.da_definire}</p>
+      <p><strong>{t.modello}:</strong> {item?.model || "-"}</p>
+      {item?.csv_description && <p><strong>{t.descr_csv}:</strong> {item.csv_description}</p>}
+      {item?.tipo && <p><strong>{t.tipo}:</strong> {item.tipo}</p>}
+      {item?.alimentazione && <p><strong>{t.alimentazione}:</strong> {item.alimentazione}</p>}
+      <p><strong>{t.dettagli}:</strong> {(item?.details || []).join(", ") || "-"}</p>
+      <p><strong>{t.differenze}:</strong> {item?.difference || "-"}</p>
+      <p><strong>{t.motivo}:</strong> {item?.motivo || "-"}</p>
+      {item?.ponte_assetto && (
+        <div style={{marginTop:"8px",padding:"8px",background:"var(--color-background-secondary)",borderRadius:"6px"}}>
+          <p><strong>Ponte assetto:</strong> {item.ponte_assetto.model} ({item.ponte_assetto.code})</p>
+          {item.ponte_assetto.motivo && <p style={{fontSize:"13px",color:"var(--color-text-secondary)"}}>{item.ponte_assetto.motivo}</p>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function OfferCard({ title, data, truck=false, t }) {
   if (!data) return null;
   return (
@@ -474,7 +598,19 @@ function OfferCard({ title, data, truck=false, t }) {
       <MachineBlock title={t.smontagomme} item={data?.smontagomme} t={t} />
       <MachineBlock title={t.equilibratrice} item={data?.equilibratrice} t={t} />
       {truck && <MachineBlock title={t.gabbia_gonfiaggio} item={data?.gabbia_gonfiaggio} t={t} />}
-      {(data?.accessori||[]).length > 0 && <div className="machine-block"><h5>{t.accessori}</h5>{data.accessori.map((a,idx)=><div key={idx} className="accessory-item"><p><strong>{t.codice}:</strong> {a.code||"-"}</p><p><strong>{t.nome}:</strong> {a.name||"-"}</p><p><strong>{t.dettagli}:</strong> {(a.details||[]).join(", ")||"-"}</p><p><strong>{t.motivo}:</strong> {a.motivo||"-"}</p></div>)}</div>}
+      {(data?.accessori||[]).length > 0 && (
+        <div className="machine-block">
+          <h5>{t.accessori}</h5>
+          {data.accessori.map((a,idx)=>(
+            <div key={idx} className="accessory-item">
+              <p><strong>{t.codice}:</strong> {a.code||"-"}</p>
+              <p><strong>{t.nome}:</strong> {a.name||"-"}</p>
+              <p><strong>{t.dettagli}:</strong> {(a.details||[]).join(", ")||"-"}</p>
+              <p><strong>{t.motivo}:</strong> {a.motivo||"-"}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -483,6 +619,8 @@ function ResultView({ result, t }) {
   const auto = result?.linea_auto || {};
   const truck = result?.linea_truck || {};
   const sollevatori = result?.sollevatori || [];
+  const sistemiAssetto = result?.sistemi_assetto || [];
+
   return (
     <div className="result-wrap">
       <div className="result-block hero-result">
@@ -490,8 +628,29 @@ function ResultView({ result, t }) {
         <p>{result?.profilo_officina?.sintesi || "-"}</p>
         <p><strong>{t.classe_volume}:</strong> {result?.profilo_officina?.classe_volume || "-"}</p>
       </div>
-      {auto?.attiva && <div className="result-block"><h3>{t.linea_auto}</h3><div className="offer-grid"><OfferCard title={t.base} data={auto.base} t={t} /><OfferCard title={t.consigliata} data={auto.consigliata} t={t} /><OfferCard title={t.premium} data={auto.premium} t={t} /></div></div>}
-      {truck?.attiva && <div className="result-block"><h3>{t.linea_truck}</h3><div className="offer-grid"><OfferCard title={t.base} data={truck.base} truck t={t} /><OfferCard title={t.consigliata} data={truck.consigliata} truck t={t} /><OfferCard title={t.premium} data={truck.premium} truck t={t} /></div></div>}
+
+      {auto?.attiva && (
+        <div className="result-block">
+          <h3>{t.linea_auto}</h3>
+          <div className="offer-grid">
+            <OfferCard title={t.base} data={auto.base} t={t} />
+            <OfferCard title={t.consigliata} data={auto.consigliata} t={t} />
+            <OfferCard title={t.premium} data={auto.premium} t={t} />
+          </div>
+        </div>
+      )}
+
+      {truck?.attiva && (
+        <div className="result-block">
+          <h3>{t.linea_truck}</h3>
+          <div className="offer-grid">
+            <OfferCard title={t.base} data={truck.base} truck t={t} />
+            <OfferCard title={t.consigliata} data={truck.consigliata} truck t={t} />
+            <OfferCard title={t.premium} data={truck.premium} truck t={t} />
+          </div>
+        </div>
+      )}
+
       {sollevatori.length > 0 && (
         <div className="result-block">
           <h3>{t.sollevatori}</h3>
@@ -500,8 +659,25 @@ function ResultView({ result, t }) {
           </div>
         </div>
       )}
-      <div className="result-block"><h3>{t.note_op}</h3><ul>{(result?.note_operative||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul></div>
-      <div className="result-block"><h3>{t.domande}</h3><ul>{(result?.domande_successive||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul></div>
+
+      {sistemiAssetto.length > 0 && (
+        <div className="result-block">
+          <h3>{t.sistemi_assetto}</h3>
+          <div className="offer-grid">
+            {sistemiAssetto.map((s, idx) => <AlignmentBlock key={idx} item={s} t={t} />)}
+          </div>
+        </div>
+      )}
+
+      <div className="result-block">
+        <h3>{t.note_op}</h3>
+        <ul>{(result?.note_operative||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul>
+      </div>
+
+      <div className="result-block">
+        <h3>{t.domande}</h3>
+        <ul>{(result?.domande_successive||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul>
+      </div>
     </div>
   );
 }
