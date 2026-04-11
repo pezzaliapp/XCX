@@ -482,7 +482,7 @@ ${JSON.stringify(inputData, null, 2)}
       <div className="container">
         <header className="hero">
           <h1>OfficinaAI</h1>
-          <p>Tu non lo sai ancora… ma stai già usando Agent AI by pezzaliAPP. Gemma + Gemini. Preparati a stupirti.</p>
+          <p>Stai per scoprire come l'AI configura un'officina in 2 minuti.</p>
         </header>
 
         <div className="progress-wrap">
