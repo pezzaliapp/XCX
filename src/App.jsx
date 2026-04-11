@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-const MODEL_ID = "gemma-3-27b-it";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent`;
-const STORAGE_KEY = "google_ai_api_key_cormach_v6";
+const WORKER_URL = "https://gemini-proxy.pezzalialessandro.workers.dev";
 
 const initialForm = {
   tipo_attivita: "",
@@ -83,8 +81,6 @@ function exportCommercialText(result) {
 
 export default function App() {
   const [step, setStep] = useState(1);
-  const [apiKeyInput, setApiKeyInput] = useState("");
-  const [savedApiKey, setSavedApiKey] = useState("");
   const [catalogo, setCatalogo] = useState(null);
   const [catalogoError, setCatalogoError] = useState("");
   const [form, setForm] = useState(initialForm);
@@ -93,10 +89,6 @@ export default function App() {
   const [rawJson, setRawJson] = useState("");
   const [error, setError] = useState("");
   const [showTechnical, setShowTechnical] = useState(false);
-
-  useEffect(() => {
-    setSavedApiKey(localStorage.getItem(STORAGE_KEY) || "");
-  }, []);
 
   useEffect(() => {
     const loadCatalogo = async () => {
@@ -126,22 +118,6 @@ export default function App() {
     });
   };
 
-  const saveApiKey = () => {
-    const clean = apiKeyInput.trim();
-    if (!clean) return alert("Inserisci una API key valida.");
-    localStorage.setItem(STORAGE_KEY, clean);
-    setSavedApiKey(clean);
-    setApiKeyInput("");
-    alert("API key salvata nel browser.");
-  };
-
-  const removeApiKey = () => {
-    localStorage.removeItem(STORAGE_KEY);
-    setSavedApiKey("");
-    setApiKeyInput("");
-    alert("API key rimossa.");
-  };
-
   const resetAll = () => {
     setForm(initialForm);
     setResult(null);
@@ -160,7 +136,6 @@ export default function App() {
   };
 
   const validateBeforeGenerate = () => {
-    if (!savedApiKey) return "Inserisci e salva prima la tua API key.";
     if (!catalogo) return "Catalogo non disponibile.";
     if (!form.tipo_attivita) return "Seleziona il tipo attività.";
     if (form.tipologie_veicoli.length === 0) return "Seleziona almeno una tipologia di veicolo.";
@@ -280,8 +255,6 @@ INPUT:
 ${JSON.stringify(inputData, null, 2)}
 `.trim();
 
-  const extractResponseText = (data) => data?.candidates?.[0]?.content?.parts?.map((p) => p?.text || "").join("") || "";
-
   const generateConfiguration = async () => {
     const validationError = validateBeforeGenerate();
     if (validationError) {
@@ -302,18 +275,17 @@ ${JSON.stringify(inputData, null, 2)}
       };
 
       const prompt = buildPrompt(preparedInput, catalogo);
-      const response = await fetch(API_URL, {
+
+      const response = await fetch(WORKER_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-goog-api-key": savedApiKey },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.1, topP: 0.9 }
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data?.error?.message || "Errore nella chiamata al modello.");
-      const cleanedText = cleanJsonResponse(extractResponseText(data));
+      if (!response.ok) throw new Error(data?.error || "Errore nella chiamata al Worker.");
+
+      const cleanedText = cleanJsonResponse(data.result);
       setRawJson(cleanedText);
       setResult(JSON.parse(cleanedText));
       setStep(8);
@@ -512,16 +484,6 @@ ${JSON.stringify(inputData, null, 2)}
           <h1>Configuratore Cormach V6</h1>
           <p>Codici e descrizioni allineati al CSV reale. Prezzi esclusi.</p>
         </header>
-
-        <div className="card">
-          <h2>API Key Google AI</h2>
-          <input type="password" placeholder="Incolla la tua API key" value={apiKeyInput} onChange={(e)=>setApiKeyInput(e.target.value)} />
-          <div className="actions-row">
-            <button className="primary" onClick={saveApiKey}>Salva key</button>
-            <button className="secondary" onClick={removeApiKey}>Rimuovi</button>
-          </div>
-          <p className="meta">Stato chiave: <strong>{savedApiKey ? "salvata in questo browser" : "non salvata"}</strong></p>
-        </div>
 
         <div className="progress-wrap">
           <div className="progress"><div className="progress-fill" style={{ width: `${progress}%` }} /></div>
