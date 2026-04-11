@@ -30,7 +30,8 @@ const TRANSLATIONS = {
     s8_title: "8. Configurazione pronta", profilo: "Profilo officina", classe_volume: "Classe volume",
     linea_auto: "Linea auto", linea_truck: "Linea truck", note_op: "Note operative", domande: "Domande successive",
     codice: "Codice", modello: "Modello", descr_csv: "Descrizione CSV", dettagli: "Dettagli", differenze: "Differenze", motivo: "Motivo",
-    smontagomme: "Smontagomme", equilibratrice: "Equilibratrice", gabbia_gonfiaggio: "Gabbia gonfiaggio", accessori: "Accessori", nome: "Nome",
+    smontagomme: "Smontagomme", equilibratrice: "Equilibratrice", gabbia_gonfiaggio: "Gabbia gonfiaggio",
+    accessori: "Accessori", nome: "Nome", sollevatori: "Sollevatori consigliati",
     base: "Base", consigliata: "Consigliata", premium: "Premium", seleziona: "Seleziona", da_valutare: "Da valutare", nessuna_pref: "Nessuna preferenza",
     opt_gommista: "Gommista", opt_officina: "Officina meccanica", opt_centro: "Centro completo",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Truck", opt_misto: "Misto", opt_suv: "SUV", opt_heavy: "Heavy duty",
@@ -43,6 +44,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Con acquisizione automatica dati", opt_top_rlc: "Top con RLC",
     opt_risparmio: "Risparmio", opt_produttivita: "Produttività", opt_ergonomia: "Ergonomia", opt_immagine: "Immagine officina",
     copied: "Testo copiato negli appunti.", copy_error: "Impossibile copiare automaticamente.", da_definire: "da definire",
+    portata: "Portata", altezza_min: "Altezza minima", alimentazione: "Alimentazione", note_sollevatore: "Note",
   },
   en: {
     subtitle: "Discover how AI configures a workshop in 2 minutes.",
@@ -62,7 +64,8 @@ const TRANSLATIONS = {
     s8_title: "8. Configuration ready", profilo: "Workshop profile", classe_volume: "Volume class",
     linea_auto: "Car line", linea_truck: "Truck line", note_op: "Operational notes", domande: "Follow-up questions",
     codice: "Code", modello: "Model", descr_csv: "CSV description", dettagli: "Details", differenze: "Differences", motivo: "Reason",
-    smontagomme: "Tyre changer", equilibratrice: "Wheel balancer", gabbia_gonfiaggio: "Inflation cage", accessori: "Accessories", nome: "Name",
+    smontagomme: "Tyre changer", equilibratrice: "Wheel balancer", gabbia_gonfiaggio: "Inflation cage",
+    accessori: "Accessories", nome: "Name", sollevatori: "Recommended lifts",
     base: "Basic", consigliata: "Recommended", premium: "Premium", seleziona: "Select", da_valutare: "To evaluate", nessuna_pref: "No preference",
     opt_gommista: "Tyre shop", opt_officina: "Mechanical workshop", opt_centro: "Full service centre",
     opt_auto: "Car", opt_auto_suv: "Car + SUV", opt_truck: "Truck", opt_misto: "Mixed", opt_suv: "SUV", opt_heavy: "Heavy duty",
@@ -75,6 +78,7 @@ const TRANSLATIONS = {
     opt_auto_data: "With automatic data acquisition", opt_top_rlc: "Top with RLC",
     opt_risparmio: "Savings", opt_produttivita: "Productivity", opt_ergonomia: "Ergonomics", opt_immagine: "Workshop image",
     copied: "Text copied to clipboard.", copy_error: "Unable to copy automatically.", da_definire: "to be defined",
+    portata: "Capacity", altezza_min: "Min height", alimentazione: "Power supply", note_sollevatore: "Notes",
   },
   de: {
     subtitle: "Entdecken Sie, wie KI eine Werkstatt in 2 Minuten konfiguriert.",
@@ -84,17 +88,18 @@ const TRANSLATIONS = {
     catalogError: "Fehler beim Laden des Katalogs.", noResult: "Kein Ergebnis verfügbar.",
     s1_title: "1. Tätigkeit", s1_tipo: "Tätigkeitstyp", s1_business: "Hauptgeschäft",
     s2_title: "2. Fahrzeugtypen", s3_title: "3. Arbeitsvolumen", s3_veicoli: "Fahrzeuge pro Tag", s3_gomme: "Reifen pro Tag",
-    s4_title: "4. Dienstleistungen & Spezialisierungen", s4_servizi: "Benötigte Dienste", s4_spec: "Spezialisierungen",
+    s4_title: "4. Dienstleistungen", s4_servizi: "Benötigte Dienste", s4_spec: "Spezialisierungen",
     s5_title: "5. Werkstatt", s5_spazio: "Werkstattgröße", s5_pav: "Bodenbelag", s5_op: "Bedienerebene",
     s6_title: "6. PKW / LKW Einstellungen", s6_monitor: "Auswuchtmaschine: Monitor", s6_lock: "Auswuchtmaschine: Spannung",
     s6_fascia: "LKW-Reifenmontiergerät: Bereich", s6_eq: "LKW-Auswuchtmaschine: Niveau",
     s7_title: "7. Prioritäten & Notizen", s7_priorita: "Kundenpriorität", s7_leverless: "Hebellos erforderlich",
     s7_assetto: "Spureinstellung erforderlich", s7_gabbia: "Aufpumpkäfig erforderlich", s7_note: "Kundennotizen",
-    s7_placeholder: "Z.B. LKW-Reifenmontiergerät und Aufpumpkäfig benötigt. Knappes Budget.",
+    s7_placeholder: "Z.B. LKW-Reifenmontiergerät benötigt. Knappes Budget.",
     s8_title: "8. Konfiguration fertig", profilo: "Werkstattprofil", classe_volume: "Volumenklasse",
     linea_auto: "PKW-Linie", linea_truck: "LKW-Linie", note_op: "Betriebshinweise", domande: "Folgefragen",
     codice: "Code", modello: "Modell", descr_csv: "CSV-Beschreibung", dettagli: "Details", differenze: "Unterschiede", motivo: "Grund",
-    smontagomme: "Reifenmontiergerät", equilibratrice: "Auswuchtmaschine", gabbia_gonfiaggio: "Aufpumpkäfig", accessori: "Zubehör", nome: "Name",
+    smontagomme: "Reifenmontiergerät", equilibratrice: "Auswuchtmaschine", gabbia_gonfiaggio: "Aufpumpkäfig",
+    accessori: "Zubehör", nome: "Name", sollevatori: "Empfohlene Hebebühnen",
     base: "Basis", consigliata: "Empfohlen", premium: "Premium", seleziona: "Auswählen", da_valutare: "Zu bewerten", nessuna_pref: "Keine Präferenz",
     opt_gommista: "Reifenwerkstatt", opt_officina: "Mechanische Werkstatt", opt_centro: "Vollservice-Center",
     opt_auto: "PKW", opt_auto_suv: "PKW + SUV", opt_truck: "LKW", opt_misto: "Gemischt", opt_suv: "SUV", opt_heavy: "Schwerlast",
@@ -107,6 +112,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Mit automatischer Datenerfassung", opt_top_rlc: "Top mit RLC",
     opt_risparmio: "Sparen", opt_produttivita: "Produktivität", opt_ergonomia: "Ergonomie", opt_immagine: "Werkstattimage",
     copied: "Text kopiert.", copy_error: "Automatisches Kopieren nicht möglich.", da_definire: "zu definieren",
+    portata: "Tragfähigkeit", altezza_min: "Mindesthöhe", alimentazione: "Stromversorgung", note_sollevatore: "Hinweise",
   },
   sq: {
     subtitle: "Zbuloni si AI konfiguron një punishte në 2 minuta.",
@@ -122,11 +128,12 @@ const TRANSLATIONS = {
     s6_fascia: "Ndërrues gomash kamion: niveli", s6_eq: "Ekuilibrues kamion: niveli",
     s7_title: "7. Prioritetet & shënime", s7_priorita: "Prioriteti i klientit", s7_leverless: "Kërkon pa levë",
     s7_assetto: "Kërkon rregullim rrotash", s7_gabbia: "Kërkon kafaz fryrjeje", s7_note: "Shënime klienti",
-    s7_placeholder: "P.sh. Nevojitet ndërrues gomash kamioni dhe kafaz fryrjeje. Buxhet i kufizuar.",
+    s7_placeholder: "P.sh. Nevojitet ndërrues gomash kamioni. Buxhet i kufizuar.",
     s8_title: "8. Konfigurimi gati", profilo: "Profili i punishtes", classe_volume: "Klasa e vëllimit",
     linea_auto: "Linja auto", linea_truck: "Linja kamion", note_op: "Shënime operative", domande: "Pyetje vijuese",
     codice: "Kodi", modello: "Modeli", descr_csv: "Përshkrim CSV", dettagli: "Detaje", differenze: "Ndryshime", motivo: "Arsyeja",
-    smontagomme: "Ndërrues gomash", equilibratrice: "Ekuilibrues", gabbia_gonfiaggio: "Kafaz fryrjeje", accessori: "Aksesore", nome: "Emri",
+    smontagomme: "Ndërrues gomash", equilibratrice: "Ekuilibrues", gabbia_gonfiaggio: "Kafaz fryrjeje",
+    accessori: "Aksesore", nome: "Emri", sollevatori: "Ngritës të rekomanduar",
     base: "Bazë", consigliata: "E rekomanduar", premium: "Premium", seleziona: "Zgjidh", da_valutare: "Për t'u vlerësuar", nessuna_pref: "Asnjë preferencë",
     opt_gommista: "Vulkanizim", opt_officina: "Punishte mekanike", opt_centro: "Qendër e plotë",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Kamion", opt_misto: "I përzier", opt_suv: "SUV", opt_heavy: "Ngarkesa të rënda",
@@ -139,6 +146,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Me blerje automatike të të dhënave", opt_top_rlc: "Top me RLC",
     opt_risparmio: "Kursim", opt_produttivita: "Produktivitet", opt_ergonomia: "Ergonomi", opt_immagine: "Imazhi i punishtes",
     copied: "Teksti u kopjua.", copy_error: "Kopjimi automatik i pamundur.", da_definire: "për t'u përcaktuar",
+    portata: "Kapaciteti", altezza_min: "Lartësia min", alimentazione: "Furnizimi", note_sollevatore: "Shënime",
   },
   ro: {
     subtitle: "Descoperiți cum AI configurează un atelier în 2 minute.",
@@ -154,11 +162,12 @@ const TRANSLATIONS = {
     s6_fascia: "Mașină montare anvelope camion: nivel", s6_eq: "Echilibrator camion: nivel",
     s7_title: "7. Priorități & note", s7_priorita: "Prioritatea clientului", s7_leverless: "Necesită fără levier",
     s7_assetto: "Necesită geometrie roți", s7_gabbia: "Necesită colivie umflare", s7_note: "Note client",
-    s7_placeholder: "Ex. Necesită mașină montare anvelope camion și colivie umflare. Buget limitat.",
+    s7_placeholder: "Ex. Necesită mașină montare anvelope camion. Buget limitat.",
     s8_title: "8. Configurație gata", profilo: "Profilul atelierului", classe_volume: "Clasa de volum",
     linea_auto: "Linie auto", linea_truck: "Linie camion", note_op: "Note operative", domande: "Întrebări ulterioare",
     codice: "Cod", modello: "Model", descr_csv: "Descriere CSV", dettagli: "Detalii", differenze: "Diferențe", motivo: "Motiv",
-    smontagomme: "Mașină montare anvelope", equilibratrice: "Echilibrator", gabbia_gonfiaggio: "Colivie umflare", accessori: "Accesorii", nome: "Nume",
+    smontagomme: "Mașină montare anvelope", equilibratrice: "Echilibrator", gabbia_gonfiaggio: "Colivie umflare",
+    accessori: "Accesorii", nome: "Nume", sollevatori: "Ridicătoare recomandate",
     base: "De bază", consigliata: "Recomandat", premium: "Premium", seleziona: "Selectează", da_valutare: "De evaluat", nessuna_pref: "Nicio preferință",
     opt_gommista: "Vulcanizare", opt_officina: "Atelier mecanic", opt_centro: "Centru complet",
     opt_auto: "Auto", opt_auto_suv: "Auto + SUV", opt_truck: "Camion", opt_misto: "Mixt", opt_suv: "SUV", opt_heavy: "Transport greu",
@@ -171,6 +180,7 @@ const TRANSLATIONS = {
     opt_auto_data: "Cu achiziție automată de date", opt_top_rlc: "Top cu RLC",
     opt_risparmio: "Economie", opt_produttivita: "Productivitate", opt_ergonomia: "Ergonomie", opt_immagine: "Imaginea atelierului",
     copied: "Text copiat.", copy_error: "Copiere automată imposibilă.", da_definire: "de definit",
+    portata: "Capacitate", altezza_min: "Înălțime min", alimentazione: "Alimentare", note_sollevatore: "Note",
   },
   zh: {
     subtitle: "了解AI如何在2分钟内配置车间。",
@@ -186,11 +196,12 @@ const TRANSLATIONS = {
     s6_fascia: "卡车换胎机：范围", s6_eq: "卡车平衡机：级别",
     s7_title: "7. 优先级与备注", s7_priorita: "客户优先级", s7_leverless: "需要无杆式",
     s7_assetto: "需要四轮定位", s7_gabbia: "需要充气笼", s7_note: "客户备注",
-    s7_placeholder: "例如：需要卡车换胎机和充气笼。预算有限。",
+    s7_placeholder: "例如：需要卡车换胎机。预算有限。",
     s8_title: "8. 配置完成", profilo: "车间简介", classe_volume: "工作量级别",
     linea_auto: "轿车系列", linea_truck: "卡车系列", note_op: "操作备注", domande: "后续问题",
     codice: "代码", modello: "型号", descr_csv: "CSV描述", dettagli: "详情", differenze: "差异", motivo: "原因",
-    smontagomme: "换胎机", equilibratrice: "平衡机", gabbia_gonfiaggio: "充气笼", accessori: "配件", nome: "名称",
+    smontagomme: "换胎机", equilibratrice: "平衡机", gabbia_gonfiaggio: "充气笼",
+    accessori: "配件", nome: "名称", sollevatori: "推荐举升机",
     base: "基础", consigliata: "推荐", premium: "高级", seleziona: "选择", da_valutare: "待评估", nessuna_pref: "无偏好",
     opt_gommista: "轮胎店", opt_officina: "机械车间", opt_centro: "综合服务中心",
     opt_auto: "轿车", opt_auto_suv: "轿车 + SUV", opt_truck: "卡车", opt_misto: "混合", opt_suv: "SUV", opt_heavy: "重型",
@@ -203,6 +214,7 @@ const TRANSLATIONS = {
     opt_auto_data: "自动数据采集", opt_top_rlc: "顶级含RLC",
     opt_risparmio: "节省", opt_produttivita: "生产效率", opt_ergonomia: "人体工程学", opt_immagine: "车间形象",
     copied: "文本已复制。", copy_error: "无法自动复制。", da_definire: "待定",
+    portata: "承重", altezza_min: "最小高度", alimentazione: "电源", note_sollevatore: "备注",
   },
 };
 
@@ -242,6 +254,11 @@ function exportCommercialText(result, t) {
   };
   pushLine(t.linea_auto, result?.linea_auto, false);
   pushLine(t.linea_truck, result?.linea_truck, true);
+  if ((result?.sollevatori || []).length) {
+    lines.push(`${t.sollevatori}:`);
+    result.sollevatori.forEach(s => lines.push(`- ${s.model} (${s.code || "-"}): ${s.motivo || ""}`));
+    lines.push("");
+  }
   if ((result?.domande_successive || []).length) {
     lines.push(`${t.domande}:`);
     result.domande_successive.forEach(d => lines.push(`- ${d}`));
@@ -296,6 +313,7 @@ export default function App() {
 
   const buildPrompt = (inputData, catalogData) => {
     const langName = LANGUAGES.find(l => l.code === lang)?.label || "Italiano";
+    const needsLifts = inputData.servizi_richiesti?.includes("sollevamento") || inputData.servizi_richiesti?.includes("assetto_ruote") || inputData.richiede_assetto;
     return `You are a senior Cormach technical-commercial consultant.
 IMPORTANT: Respond ENTIRELY in ${langName}. All text fields must be in ${langName}.
 
@@ -303,9 +321,17 @@ HARD CONSTRAINTS:
 - No prices. Do not invent codes outside the catalog.
 - If input includes auto/SUV and truck/heavy_duty: create TWO DISTINCT BRANCHES linea_auto and linea_truck.
 - Follow all auto_lock_pref, auto_monitor_pref, truck_smonto_fascia, truck_eq_level rules strictly.
+- SOLLEVATORI: If servizi_richiesti includes "sollevamento" OR "assetto_ruote" OR richiede_assetto=true, you MUST populate the "sollevatori" array with 1-3 recommended lifts from the catalog sections: ponti_forbice_assetto, ponti_forbice_doppia, colonne_mobili. Choose based on vehicle types and workshop space. For assetto_ruote: prefer ponti_forbice_assetto (PFA 40 or PFA 50). For general lifting: prefer ponti_forbice_doppia (L 3100, L 3300, L 3300 EVO, L 3400, L 3500 EVO). For heavy vehicles/trucks: prefer colonne_mobili (WL 85 MOVE). If sollevamento is NOT requested, return "sollevatori": [].
 
 MANDATORY JSON FORMAT (respond with JSON only, no markdown):
-{"profilo_officina":{"sintesi":"string","classe_volume":"basso|medio|alto","misto_auto_truck":true},"linea_auto":{"attiva":true,"base":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]},"consigliata":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]},"premium":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]}},"linea_truck":{"attiva":false,"base":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"gabbia_gonfiaggio":{"necessaria":true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]},"consigliata":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"gabbia_gonfiaggio":{"necessaria":true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]},"premium":{"smontagomme":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"equilibratrice":{"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"},"gabbia_gonfiaggio":{"necessaria":true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"},"accessori":[]}},"note_operative":["string"],"domande_successive":["string"]}
+{
+  "profilo_officina": {"sintesi": "string", "classe_volume": "basso|medio|alto", "misto_auto_truck": false},
+  "linea_auto": {"attiva": true, "base": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "consigliata": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "premium": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}},
+  "linea_truck": {"attiva": false, "base": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "consigliata": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}, "premium": {"smontagomme": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "equilibratrice": {"code":"string","model":"string","csv_description":"string","details":["string"],"difference":"string","motivo":"string"}, "gabbia_gonfiaggio": {"necessaria": true,"code":"string","model":"string","details":["string"],"difference":"string","motivo":"string"}, "accessori": []}},
+  "sollevatori": [{"code":"string","model":"string","csv_description":"string","portata":"string","altezza_min":"string","alimentazione":"string","details":["string"],"motivo":"string"}],
+  "note_operative": ["string"],
+  "domande_successive": ["string"]
+}
 
 CATALOG: ${JSON.stringify(catalogData, null, 2)}
 INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
@@ -425,6 +451,21 @@ function MachineBlock({ title, item, t }) {
   );
 }
 
+function LiftBlock({ item, t }) {
+  return (
+    <div className="machine-block">
+      <p><strong>{t.codice}:</strong> {item?.code || t.da_definire}</p>
+      <p><strong>{t.modello}:</strong> {item?.model || "-"}</p>
+      {item?.csv_description && <p><strong>{t.descr_csv}:</strong> {item.csv_description}</p>}
+      {item?.portata && <p><strong>{t.portata}:</strong> {item.portata}</p>}
+      {item?.altezza_min && <p><strong>{t.altezza_min}:</strong> {item.altezza_min}</p>}
+      {item?.alimentazione && <p><strong>{t.alimentazione}:</strong> {item.alimentazione}</p>}
+      <p><strong>{t.dettagli}:</strong> {(item?.details || []).join(", ") || "-"}</p>
+      <p><strong>{t.motivo}:</strong> {item?.motivo || "-"}</p>
+    </div>
+  );
+}
+
 function OfferCard({ title, data, truck=false, t }) {
   if (!data) return null;
   return (
@@ -441,6 +482,7 @@ function OfferCard({ title, data, truck=false, t }) {
 function ResultView({ result, t }) {
   const auto = result?.linea_auto || {};
   const truck = result?.linea_truck || {};
+  const sollevatori = result?.sollevatori || [];
   return (
     <div className="result-wrap">
       <div className="result-block hero-result">
@@ -450,6 +492,14 @@ function ResultView({ result, t }) {
       </div>
       {auto?.attiva && <div className="result-block"><h3>{t.linea_auto}</h3><div className="offer-grid"><OfferCard title={t.base} data={auto.base} t={t} /><OfferCard title={t.consigliata} data={auto.consigliata} t={t} /><OfferCard title={t.premium} data={auto.premium} t={t} /></div></div>}
       {truck?.attiva && <div className="result-block"><h3>{t.linea_truck}</h3><div className="offer-grid"><OfferCard title={t.base} data={truck.base} truck t={t} /><OfferCard title={t.consigliata} data={truck.consigliata} truck t={t} /><OfferCard title={t.premium} data={truck.premium} truck t={t} /></div></div>}
+      {sollevatori.length > 0 && (
+        <div className="result-block">
+          <h3>{t.sollevatori}</h3>
+          <div className="offer-grid">
+            {sollevatori.map((s, idx) => <LiftBlock key={idx} item={s} t={t} />)}
+          </div>
+        </div>
+      )}
       <div className="result-block"><h3>{t.note_op}</h3><ul>{(result?.note_operative||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul></div>
       <div className="result-block"><h3>{t.domande}</h3><ul>{(result?.domande_successive||[]).map((n,idx)=><li key={idx}>{n}</li>)}</ul></div>
     </div>
