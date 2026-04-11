@@ -507,6 +507,7 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
     const validationError = validateBeforeGenerate();
     if (validationError) { setError(validationError); return; }
     setLoading(true); setError(""); setResult(null);
+    const langName = LANGUAGES.find(l => l.code === lang)?.label || "Italiano";
     try {
       const preparedInput = {
         ...form,
@@ -522,6 +523,28 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
       const data = await response.json();
       if (!response.ok) throw new Error(data?.error || "Errore Worker.");
       const parsed = JSON.parse(cleanJsonResponse(data.result));
+
+      // Translation helper for catalog text fields
+      const translateItem = async (item) => {
+        if (!item || lang === "it") return item;
+        const fieldsToTranslate = {
+          details: item.details,
+          difference: item.difference,
+          motivo: item.motivo,
+          csv_description: item.csv_description,
+        };
+        try {
+          const tr = await fetch(WORKER_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt: `Translate the following JSON text fields to ${langName}. Return ONLY valid JSON with the same keys. Do not translate codes, model names, or technical abbreviations like "CCD", "3D", "NLS", "RLC", "Wi-Fi". Keep numbers and units unchanged.
+${JSON.stringify(fieldsToTranslate)}` })
+          });
+          const td = await tr.json();
+          const translated = JSON.parse(cleanJsonResponse(td.result));
+          return { ...item, ...translated };
+        } catch { return item; }
+      };
 
       // SISTEMI ASSETTO — inject from catalog
       if (needsAssetto && catalogo) {
@@ -548,7 +571,6 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
         let sistemiAssetto = [];
 
         if (assVeicoli === "entrambi") {
-          // Propose both PFA 40 and PFA 50 variants
           if (vol === "basso" || prio === "risparmio") {
             sistemiAssetto = [mk(wr328a, pfa40), mk(geo10, pfa40), mk(geo10, pfa50)].filter(Boolean);
           } else if (vol === "alto" || prio === "immagine_officina") {
@@ -565,6 +587,9 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
           } else {
             sistemiAssetto = [mk(geo10, pfa), mk(geo20, pfa), mk(geo25, pfa)].filter(Boolean);
           }
+        }
+        if (lang !== "it") {
+          sistemiAssetto = await Promise.all(sistemiAssetto.map(item => translateItem(item)));
         }
         parsed.sistemi_assetto = sistemiAssetto;
       } else {
@@ -602,6 +627,9 @@ INPUT: ${JSON.stringify(inputData, null, 2)}`.trim();
               ponti.find(p => p.model === "L 3300 EVO"),
             ].filter(Boolean);
           }
+        }
+        if (lang !== "it") {
+          selected = await Promise.all(selected.map(item => translateItem(item)));
         }
         parsed.sollevatori = selected;
       } else {
