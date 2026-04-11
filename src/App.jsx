@@ -481,7 +481,7 @@ ${JSON.stringify(inputData, null, 2)}
     <div className="app-shell">
       <div className="container">
         <header className="hero">
-          <h1>Configuratore Cormach V6</h1>
+          <h1>OfficinaAI</h1>
           <p>Tu non lo sai ancora… ma stai già usando Agent AI by pezzaliAPP. Gemma + Gemini. Preparati a stupirti.</p>
         </header>
 
